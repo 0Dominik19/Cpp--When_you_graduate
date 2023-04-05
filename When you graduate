@@ -1,0 +1,57 @@
+//The program takes into account changes in Polish education after 2021.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    cout << "Welcome to the program that will calculate in which year you will graduate." << endl;
+    cout << "" << endl;
+    int startyear, type;
+    cout << "Enter the year of starting education (1st grade of primary school): ";
+    cin >> startyear;
+    cout << "" << endl;
+
+    cout << "Specify the type of secondary school (1-secondary school, 2-technical school, 3-first-cycle vocational school, 4-second-cycle vocational school): ";
+    cin >> type;
+
+    int education;
+    switch (type) {
+        case 1: education = 4; break;
+        case 2: education = 5; break;
+        case 3: education = 3; break;
+        case 4: education = 5; break;
+        default:
+            cout << "Unknown type of school!" << endl;
+            return 1;
+    }
+
+    cout << "" << endl;
+    int endyear = startyear + 8 + education;
+    cout << "The student will finish his education in " << endyear << " year." << endl;
+
+    char ans;
+    cout << "Are you going to your studies? (y/n): ";
+    cin >> ans;
+    if (ans == 'y' || ans == 'Y') {
+        cout << "" << endl;
+        cout << "What kind of studies do you intend to undertake? (1-bachelor's degree, 2-master's degree, 3-doctoral school): ";
+        int studytype;
+        cin >> studytype;
+        cout << "" << endl;
+        switch (studytype)
+         {
+            case 1: cout << "You will complete your undergraduate studies in " << endyear + 3 << " year." << endl; break;
+            case 2: cout << "You will complete your master's studies in " << endyear + 5 << " year." << endl; break;
+            case 3: cout << "You will graduate from the doctoral school in " << endyear + 9 << " year." << endl; break;
+            default:
+                cout << "Unknown type of studies!" << endl;
+                return 1;
+        }
+    }
+
+    return 0;
+}
+
