@@ -14,7 +14,7 @@ int main()
     cin >> startyear;
     cout << "" << endl;
 
-    cout << "Specify the type of secondary school (1-secondary school, 2-technical school, 3-first-cycle vocational school, 4-second-cycle vocational school): ";
+    cout << "Specify the type of secondary school (1-high school, 2-technical school, 3-first-cycle vocational school, 4-second-cycle vocational school): ";
     cin >> type;
 
     int education;
